@@ -3,11 +3,19 @@ public class reverstring {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         String str=sc.nextLine();
-        String res="";
-        char[] array=str.toCharArray();
-        for(int i=array.length-1;i>=0;i--){
-            res+=array[i];
+        int left=0,right=str.length()-1;
+        char []arr=str.toCharArray();
+        while(left<=right){
+            char temp=arr[left];
+            arr[left]=arr[right];
+            arr[right]=temp;
+            left++;
+            right--;
         }
-        System.out.println(res);
+        String result=new String(arr);
+        String s1="c";
+        
+        System.out.println(result);
     }
 }
+
